@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .d-inline-block {
+            clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 71% 99%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+        }
+
+        .container {
+            /* margin:5px;
+            padding: 5px; */
+            height: 85vh;
+            width: 100vh;
+            display: flex;
+            justify-content: center;
+            border: 5px solid blue;
+            border-radius: 55px;
+            background-color: rgb(37, 11, 68);
+            align-items: center;
+        }
+
+        .box {
+            /* border: 2px solid black; */
+            /* border-radius: 2px; */
+            color: rgb(204, 255, 0);
+            text-decoration: dotted;
+            font-style: oblique;
+        }
+
+        .navbar {
+            background-color: greenyellow;
+            animation-name: progress;
+            animation-duration: 10s;
+            animation-timing-function: ease-in;
+            animation-fill-mode: forwards;
+
+        }
+
+        @keyframes progress {
+            from {
+                width: 0%
+            }
+
+            to {
+                width: 100%
+            }
+        }
+    </style>
+    <script>
+        let a;
+        let date;
+        let time;
+        const options = { weekady: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        a = new Date();
+        setInterval(() => {
+            a = new Date();
+            date = a.toLocaleDateString(undefined, options);
+            time = a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds();
+            document.getElementById('time2').innerHTML = date + " on " + time;
+            console.log(a);
+        }, 1000);
+
+
+
+    </script>
+    <title>Date&Time</title>
+</head>
+
+<body>
+    <!-- for putting date & time logo at top -->
+    <nav class="navbar navbar-light t">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="timeimg.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                Date&Time
+            </a>
+        </div>
+    </nav>
+    <!-- for making progress button -->
+
+    <!-- for displaying date & time -->
+    <div class="container">
+        <div class="box">
+            <h1 id="time">Current Date & time is: </h1>
+            <h2 id="time2"></h2>
+        </div>
+    </div>
+    <!-- adding script through bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+        </script>
+
+</body>
+
+</html>
